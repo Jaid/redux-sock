@@ -44,7 +44,6 @@ it("should run", async () => {
   store.subscribe(() => {
     const state = store.getState()
     lastStatus = state.socket.status
-    debugger
     expect(["unset", "connected", "disconnected"]).toContain(lastStatus)
   })
   await delay(ms`2 seconds`)
