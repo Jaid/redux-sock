@@ -2,11 +2,12 @@
 
 import socketIoClient from "socket.io-client"
 import immer from "immer"
+import socketioWildcard from "socketio-wildcard"
 
 /**
  * @typedef {Object} Options
  * @prop {string} url
- * @prop {string[]|Object<string, true | string | ((dispatch: Function) => void)>} events
+ * @prop {string[]|Object<string, true | string | ((dispatch: Function) => void)>} [events]
  * @prop {Object} [socketClientOptions]
  * @prop {string} [basePrefix="@@socket/"]
  * @prop {string} [sendPrefix="send/"]
@@ -29,7 +30,7 @@ export default function createSocketMiddleware(options) {
     basePrefix: "@@socket/",
     sendPrefix: "send/",
     receivePrefix: "received/",
-    events: [],
+    events: false,
     ...options,
   }
   const connectedType = `${options.basePrefix}connected`
@@ -46,35 +47,47 @@ export default function createSocketMiddleware(options) {
       store.dispatch({
         type: initiallyConnectedType,
       })
-      if (Array.isArray(options.events)) {
-        for (const eventName of options.events) {
-          socketClient.on(eventName, (...payload) => {
-            store.dispatch({
-              type: receivePrefix + eventName,
-              payload: payload[0],
-            })
-          })
-        }
-      } else {
-        for (const [eventName, eventHandler] of Object.entries(options.events)) {
-          if (eventHandler === true) {
+      if (options.events) {
+        if (Array.isArray(options.events)) {
+          for (const eventName of options.events) {
             socketClient.on(eventName, (...payload) => {
               store.dispatch({
                 type: receivePrefix + eventName,
                 payload: payload[0],
               })
             })
-          } else if (typeof eventHandler === "string") {
-            socketClient.on(eventName, (...payload) => {
-              store.dispatch({
-                type: receivePrefix + eventHandler,
-                payload: payload[0],
+          }
+        } else {
+          for (const [eventName, eventHandler] of Object.entries(options.events)) {
+            if (eventHandler === true) {
+              socketClient.on(eventName, (...payload) => {
+                store.dispatch({
+                  type: receivePrefix + eventName,
+                  payload: payload[0],
+                })
               })
-            })
-          } else {
-            socketClient.on(eventName, (...payload) => eventHandler(store.dispatch, payload[0]))
+            } else if (typeof eventHandler === "string") {
+              socketClient.on(eventName, (...payload) => {
+                store.dispatch({
+                  type: receivePrefix + eventHandler,
+                  payload: payload[0],
+                })
+              })
+            } else {
+              socketClient.on(eventName, (...payload) => eventHandler(store.dispatch, payload[0]))
+            }
           }
         }
+      } else {
+        const patch = socketioWildcard(socketIoClient.Manager)
+        patch(socketClient)
+        socketClient.on("*", packet => {
+          const [eventName, ...payload] = packet.data
+          store.dispatch({
+            type: receivePrefix + eventName,
+            payload: payload[0],
+          })
+        })
       }
     })
     socketClient.on("connect", () => {
