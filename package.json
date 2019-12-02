@@ -37,5 +37,6 @@
     "test:debug": "DEBUG=\"$DEBUG,$(basename $PWD),$(basename $PWD):*\" NODE_ENV=test node --inspect=9229 node_modules/jest/bin/jest.js --runInBand",
     "prepareActionJest": "npm run build:prod"
   },
-  "name": "redux-sock"
+  "name": "redux-sock",
+  "description": "Redux middleware and reducer for controlling socket.io clients."
 }
