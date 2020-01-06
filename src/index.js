@@ -1,7 +1,7 @@
 /** @module redux-sock */
 
-import socketIoClient from "socket.io-client"
 import immer from "immer"
+import socketIoClient from "socket.io-client"
 import socketioWildcard from "socketio-wildcard"
 
 /**

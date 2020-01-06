@@ -1,10 +1,9 @@
-import path from "path"
-
-import getPort from "get-port"
-import socketIoServer from "socket.io"
-import {createStore, applyMiddleware, combineReducers} from "redux"
 import delay from "delay"
+import getPort from "get-port"
 import ms from "ms.macro"
+import path from "path"
+import {applyMiddleware, combineReducers, createStore} from "redux"
+import socketIoServer from "socket.io"
 
 const indexModule = (process.env.MAIN ? path.resolve(process.env.MAIN) : path.join(__dirname, "..", "src")) |> require
 
