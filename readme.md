@@ -2,7 +2,7 @@
 
 
 <a href="https://actions-badge.atrox.dev/Jaid/redux-sock/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2FJaid%2Fredux-sock%2Fbadge" alt="Build status"/></a> <a href="https://raw.githubusercontent.com/Jaid/redux-sock/master/license.txt"><img src="https://img.shields.io/github/license/Jaid/redux-sock?style=flat-square" alt="License"/></a>  
-<a href="https://github.com/Jaid/redux-sock/commits"><img src="https://img.shields.io/github/commits-since/Jaid/redux-sock/v2.0.0?style=flat-square&logo=github" alt="Commits since v2.0.0"/></a> <a href="https://github.com/Jaid/redux-sock/commits"><img src="https://img.shields.io/github/last-commit/Jaid/redux-sock?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/Jaid/redux-sock/issues"><img src="https://img.shields.io/github/issues/Jaid/redux-sock?style=flat-square&logo=github" alt="Issues"/></a>  
+<a href="https://github.com/Jaid/redux-sock/commits"><img src="https://img.shields.io/github/commits-since/Jaid/redux-sock/v2.0.1?style=flat-square&logo=github" alt="Commits since v2.0.1"/></a> <a href="https://github.com/Jaid/redux-sock/commits"><img src="https://img.shields.io/github/last-commit/Jaid/redux-sock?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/Jaid/redux-sock/issues"><img src="https://img.shields.io/github/issues/Jaid/redux-sock?style=flat-square&logo=github" alt="Issues"/></a>  
 <a href="https://npmjs.com/package/redux-sock"><img src="https://img.shields.io/npm/v/redux-sock?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/Jaid/redux-sock/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/redux-sock?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/redux-sock"><img src="https://img.shields.io/npm/dm/redux-sock?style=flat-square&logo=npm" alt="Downloads"/></a>
 
 **Redux middleware and reducer for controlling socket.io clients.**
@@ -21,15 +21,15 @@
 ## Installation
 <a href="https://npmjs.com/package/redux-sock"><img src="https://img.shields.io/badge/npm-redux--sock-C23039?style=flat-square&logo=npm" alt="redux-sock on npm"/></a>
 ```bash
-npm install --save redux-sock@^2.0.0
+npm install --save redux-sock@^2.0.1
 ```
 <a href="https://yarnpkg.com/package/redux-sock"><img src="https://img.shields.io/badge/Yarn-redux--sock-2F8CB7?style=flat-square&logo=yarn&logoColor=white" alt="redux-sock on Yarn"/></a>
 ```bash
-yarn add redux-sock@^2.0.0
+yarn add redux-sock@^2.0.1
 ```
 <a href="https://jsdelivr.com/package/npm/redux-sock/"><img src="https://img.shields.io/badge/jsDelivr-redux--sock-orange?style=flat-square&logo=html5&logoColor=white" alt="redux-sock on jsDelivr"/></a> <a href="https://unpkg.com/browse/redux-sock/"><img src="https://img.shields.io/badge/UNPKG-redux--sock-orange?style=flat-square&logo=html5&logoColor=white" alt="redux-sock on UNPKG"/></a>
 ```html
-<script src="https://cdn.jsdelivr.net/npm/redux-sock@2.0.0/index.js"/>
+<script src="https://cdn.jsdelivr.net/npm/redux-sock@2.0.1/index.js"/>
 ```
 
 
@@ -42,7 +42,7 @@ Open a browser's JavaScript console and execute:
 ```javascript
 const scriptElement = document.createElement("script");
 scriptElement.setAttribute("type", "text/javascript");
-scriptElement.setAttribute("src", "https://cdn.jsdelivr.net/npm/redux-sock@2.0.0/index.js");
+scriptElement.setAttribute("src", "https://cdn.jsdelivr.net/npm/redux-sock@2.0.1/index.js");
 document.querySelector("head").appendChild(scriptElement);
 ```
 
