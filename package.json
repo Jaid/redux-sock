@@ -38,5 +38,6 @@
     "prepareActionJest": "npm run build:prod"
   },
   "name": "redux-sock",
-  "description": "Redux middleware and reducer for controlling socket.io clients."
+  "description": "Redux middleware and reducer for controlling socket.io clients.",
+  "funding": "https://github.com/sponsors/jaid"
 }
