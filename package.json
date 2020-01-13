@@ -39,5 +39,9 @@
   },
   "name": "redux-sock",
   "description": "Redux middleware and reducer for controlling socket.io clients.",
-  "funding": "https://github.com/sponsors/jaid"
+  "funding": "https://github.com/sponsors/jaid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaid/redux-sock"
+  }
 }
