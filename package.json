@@ -43,5 +43,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jaid/redux-sock"
-  }
+  },
+  "homepage": "https://github.com/Jaid/redux-sock",
+  "keywords": []
 }
