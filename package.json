@@ -44,5 +44,16 @@
     "url": "https://github.com/jaid/redux-sock"
   },
   "homepage": "https://github.com/Jaid/redux-sock",
-  "keywords": []
+  "keywords": [
+    "lib",
+    "library",
+    "react",
+    "react-dom",
+    "reducer",
+    "redux",
+    "redux-middleware",
+    "redux-reducer",
+    "util",
+    "utility"
+  ]
 }
